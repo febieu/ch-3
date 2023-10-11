@@ -11,6 +11,8 @@ class MusicAdapter(
 private val musicList:ArrayList<Music>
 ): RecyclerView.Adapter<MusicAdapter.MusicViewHolder>()
 {
+
+    var onItemClick : ((Music) -> Unit)? = null
     class MusicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.image_view)
         val textView: TextView = itemView.findViewById(R.id.text_view)
@@ -30,6 +32,11 @@ private val musicList:ArrayList<Music>
         val music = musicList[position]
         holder.imageView.setImageResource(music.image)
         holder.textView.text = music.name
+
+
+        holder.itemView.setOnClickListener{
+            onItemClick?.invoke(music)
+        }
     }
 
     override fun getItemCount(): Int {

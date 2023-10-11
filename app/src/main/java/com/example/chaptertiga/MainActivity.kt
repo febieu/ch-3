@@ -1,5 +1,6 @@
 package com.example.chaptertiga
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,7 +28,14 @@ class MainActivity : AppCompatActivity() {
         musicList.add(Music(R.drawable.svt_, "PENTAGON"))
         musicList.add(Music(R.drawable.svt_, "G-IDLE"))
 
+
         musicAdapter = MusicAdapter(musicList)
         recyclerView.adapter = musicAdapter
+
+        musicAdapter.onItemClick = {
+            val intent = Intent(this, DetailedActivity::class.java)
+            intent.putExtra("music", it)
+            startActivity(intent)
+        }
     }
 }
