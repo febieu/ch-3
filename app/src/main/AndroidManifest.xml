@@ -13,9 +13,13 @@
         android:theme="@style/Theme.ChapterTiga"
         tools:targetApi="31">
         <activity
-            android:name=".DetailedActivity"
+            android:name=".SubMainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat"/>
+        <activity
+            android:name=".DetailedActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat" />
         <activity
             android:name=".ItemActivity"
             android:exported="false" />

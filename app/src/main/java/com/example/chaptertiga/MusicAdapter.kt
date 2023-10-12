@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class MusicAdapter(
-private val musicList:ArrayList<Music>
+private val musicList: ArrayList<Music>
 ): RecyclerView.Adapter<MusicAdapter.MusicViewHolder>()
 {
 

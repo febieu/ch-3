@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = musicAdapter
 
         musicAdapter.onItemClick = {
-            val intent = Intent(this, DetailedActivity::class.java)
+            val intent = Intent(this, SubMainActivity::class.java)
             intent.putExtra("music", it)
             startActivity(intent)
         }

@@ -20,5 +20,17 @@ class DetailedActivity : AppCompatActivity() {
 
 
         }
+        val musicArray = intent.getParcelableArrayExtra("musicArray") as Array<Music>?
+        if (musicArray != null && musicArray.isNotEmpty()) {
+            val textView: TextView = findViewById(R.id.text_album)
+            val imageView: ImageView = findViewById(R.id.image_album)
+
+            // Misalnya, kita ambil music pertama dari array
+            val firstMusic = musicArray[0]
+
+            textView.text = firstMusic.name
+            imageView.setImageResource(firstMusic.image)
+        }
+
     }
 }
